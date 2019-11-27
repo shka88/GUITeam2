@@ -17,10 +17,7 @@ public class LibraryFrame extends JFrame
         
         mp = new LibraryPanel();
         this.add(mp);
-        
-        
-    
-        
+
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
     }
