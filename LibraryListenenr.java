@@ -1,5 +1,7 @@
 import javax.swing.*;
 import java.awt.event.*;
+import javax.swing.event.*;
+
 /**
  * 여기에 LibraryListenenr 클래스 설명을 작성하십시오.
  * 
@@ -9,7 +11,7 @@ import java.awt.event.*;
 public class LibraryListenenr implements ActionListener
 {
     JButton rbr,rbk,fl,ol,borrower,book,loan;
-    JTextField txt; 
+    JTextField text; 
     JList<String> jl;
     public LibraryListenenr(){
         // rbr.addActionListener(this);
@@ -19,55 +21,61 @@ public class LibraryListenenr implements ActionListener
     }
 
     public void actionPerformed(ActionEvent e){
-        Object obj = e.getSource();
-       
-        if(obj.equals(rbr)){                      
-            String strName = JOptionPane.showInputDialog(null,"name");
-            txt.setText(strName); 
-             
-        }
-        else if(obj.equals(rbk)){
-            String strBook = JOptionPane.showInputDialog(null,"title");
-            txt.setText(strBook);
+            //Object obj = e.getSource();
+            if(e.getSource() == rbr){                      
+                String strName = JOptionPane.showInputDialog(null,"name","Borrower",
+                JOptionPane.INFORMATION_MESSAGE);
 
-            String strAuthor = JOptionPane.showInputDialog(null,"author");
-            txt.setText(strAuthor);
+                JOptionPane.showMessageDialog(null,"등록되었습니다. "+ text);
 
-        }
-        else if(obj.equals(fl)){
-            String str = JOptionPane.showInputDialog(null,"title");
-            txt.setText(str);
 
-            String strAuthor = JOptionPane.showInputDialog(null,"author");
-            txt.setText(strAuthor);
+                //txt.setText(strName); 
+                //JOptionPane.PLAIN_MESSAGE, null, null, null);
+                //System.out.println("strName : " + strName); //입력한 단어가 리턴된다.
 
-            String strNumber = JOptionPane.showInputDialog(null,"catalogueNumber");
-            txt.setText(strNumber);
-        }
-        else if(obj.equals(ol)){
-            String str = JOptionPane.showInputDialog(null,"title");
-            txt.setText(str);
+            }
+            else if(e.getSource() == rbk){
+                String strBook = JOptionPane.showInputDialog(null,"title");
+                text.setText(strBook);
 
-            String strAuthor = JOptionPane.showInputDialog(null,"author");
-            txt.setText(strAuthor);
-
-            String strNumber = JOptionPane.showInputDialog(null,"catalogueNumber");
-            txt.setText(strNumber);
-        }
-        else if(obj.equals(borrower)){
-            String jlBorrower[]= {"대출가능한 책"};
-            jl = new JList(jlBorrower); 
-        }
-        else if(obj.equals(book)){
-            String jlBook[]= {"등록된 이용자"};                        
-            jl = new JList(jlBook);   
-        }
-        else if(obj.equals(loan)){
-            String jlLoan[]= {"대출 되어 있는 책 컬랙션"};                        
-            jl = new JList(jlLoan);          
-        }
-        else{
-            return;
-        }
+                String strAuthor = JOptionPane.showInputDialog(null,"author");
+                text.setText(strAuthor);
+    
+            }
+            else if(e.getSource() ==  fl){
+                String str = JOptionPane.showInputDialog(null,"title");
+                text.setText(str);
+    
+                String strAuthor = JOptionPane.showInputDialog(null,"author");
+                text.setText(strAuthor);
+    
+                String strNumber = JOptionPane.showInputDialog(null,"catalogueNumber");
+                text.setText(strNumber);
+            }
+            else if(e.getSource() ==  ol){
+                String str = JOptionPane.showInputDialog(null,"title");
+                text.setText(str);
+    
+                String strAuthor = JOptionPane.showInputDialog(null,"author");
+                text.setText(strAuthor);
+    
+                String strNumber = JOptionPane.showInputDialog(null,"catalogueNumber");
+                text.setText(strNumber);
+            }
+            else if(e.getSource() ==  borrower){
+                String jlBorrower[]= {"대출가능한 책"};
+                jl = new JList(jlBorrower); 
+            }
+            else if(e.getSource() ==  book){
+                String jlBook[]= {"등록된 이용자"};                        
+                jl = new JList(jlBook);   
+            }
+            else if(e.getSource() ==  loan){
+                String jlLoan[]= {"대출 되어 있는 책 컬랙션"};                        
+                jl = new JList(jlLoan);          
+            }
+            else{
+                return;
+            }
     }
 }
