@@ -8,6 +8,6 @@
 public class MyApp
 {
     public static void main(String args[]){
-        new  LibraryFrame();
+        LibraryFrame LF = new  LibraryFrame();
     }
 }

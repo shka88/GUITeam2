@@ -66,6 +66,8 @@ public class LibraryListenenr implements ActionListener
             String jlLoan[]= {"대출 되어 있는 책 컬랙션"};                        
             jl = new JList(jlLoan);          
         }
+        else{
+            return;
+        }
     }
-
 }
