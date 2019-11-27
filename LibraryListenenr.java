@@ -13,10 +13,10 @@ public class LibraryListenenr implements ActionListener
     JList<String> jl;
 
     public LibraryListenenr(){
-        rbr.addActionListener(this);
-        rbk.addActionListener(this);
-        fl.addActionListener(this); 
-        ol.addActionListener(this);
+        // rbr.addActionListener(this);
+        // rbk.addActionListener(this);
+        // fl.addActionListener(this); 
+        // ol.addActionListener(this);
     }
 
     public void actionPerformed(ActionEvent e){
