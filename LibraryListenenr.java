@@ -21,12 +21,13 @@ public class LibraryListenenr implements ActionListener
 
     public void actionPerformed(ActionEvent e){
         Object obj = e.getSource();
-
-        if(obj == rbr){
+       
+        if(obj.equals(rbr)){                      
             String strName = JOptionPane.showInputDialog(null,"name");
-            txt.setText(strName);
+            txt.setText(strName); 
+             
         }
-        else if(obj == rbk){
+        else if(obj.equals(rbk)){
             String strBook = JOptionPane.showInputDialog(null,"title");
             txt.setText(strBook);
 
@@ -34,7 +35,7 @@ public class LibraryListenenr implements ActionListener
             txt.setText(strAuthor);
 
         }
-        else if(obj == fl){
+        else if(obj.equals(fl)){
             String str = JOptionPane.showInputDialog(null,"title");
             txt.setText(str);
 
@@ -44,7 +45,7 @@ public class LibraryListenenr implements ActionListener
             String strNumber = JOptionPane.showInputDialog(null,"catalogueNumber");
             txt.setText(strNumber);
         }
-        else if(obj == ol){
+        else if(obj.equals(ol)){
             String str = JOptionPane.showInputDialog(null,"title");
             txt.setText(str);
 
@@ -54,15 +55,15 @@ public class LibraryListenenr implements ActionListener
             String strNumber = JOptionPane.showInputDialog(null,"catalogueNumber");
             txt.setText(strNumber);
         }
-        else if(obj == borrower){
+        else if(obj.equals(borrower)){
             String jlBorrower[]= {"대출가능한 책"};
             jl = new JList(jlBorrower); 
         }
-        else if(obj == book){
-            String jlBook[]= {"등럭된 이용자"};                        
+        else if(obj.equals(book)){
+            String jlBook[]= {"등록된 이용자"};                        
             jl = new JList(jlBook);   
         }
-        else if(obj == loan){
+        else if(obj.equals(loan)){
             String jlLoan[]= {"대출 되어 있는 책 컬랙션"};                        
             jl = new JList(jlLoan);          
         }
