@@ -13,6 +13,7 @@ public class LibraryPanel extends JPanel
     JLabel ml;
     JButton rbr,rbk,fl,ol,borrower,book,loan;
     JTextField txt;
+    
     public LibraryPanel(){
         rbr = new JButton("RegisterBorrower");
         rbk = new JButton("RegisterBook");

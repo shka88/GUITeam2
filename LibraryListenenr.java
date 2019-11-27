@@ -6,26 +6,55 @@ import java.awt.event.*;
  * @author () 
  * @version (버전번호나 날짜)
  */
-public class LibraryListenenr extends LibraryPanel implements ActionListener
+public class LibraryListenenr implements ActionListener
 {
     JButton rbr,rbk,fl,ol,borrower,book,loan;
-    JTextField txt;
+    JTextField txt; 
+    public LibraryListenenr(){
+        
+        rbr.addActionListener(this);
+        rbk.addActionListener(this);
+        fl.addActionListener(this); 
+        ol.addActionListener(this);
+    }
+    
     public void actionPerformed(ActionEvent e){
         Object obj = e.getSource();
+        
         if(obj == rbr){
-            String strName = JOptionPane.showInputDialog(null,"이름");
+            String strName = JOptionPane.showInputDialog(null,"name");
             txt.setText(strName);
         }
         else if(obj == rbk){
-            String strBook = JOptionPane.showInputDialog(null,"책 제목");
+            String strBook = JOptionPane.showInputDialog(null,"title");
             txt.setText(strBook);
             
-            String str = JOptionPane.showInputDialog(null,"이름");
-            txt.setText(str);
+            String strAuthor = JOptionPane.showInputDialog(null,"author");
+            txt.setText(strAuthor);
+            
         }
         else if(obj == fl){
-            String str = JOptionPane.showInputDialog(null,"이름");
+            String str = JOptionPane.showInputDialog(null,"title");
             txt.setText(str);
+            
+            String strAuthor = JOptionPane.showInputDialog(null,"author");
+            txt.setText(strAuthor);
+            
+            String strNumber = JOptionPane.showInputDialog(null,"catalogueNumber");
+            txt.setText(strNumber);
+        }
+        else if(obj == ol){
+            String str = JOptionPane.showInputDialog(null,"title");
+            txt.setText(str);
+            
+            String strAuthor = JOptionPane.showInputDialog(null,"author");
+            txt.setText(strAuthor);
+            
+            String strNumber = JOptionPane.showInputDialog(null,"catalogueNumber");
+            txt.setText(strNumber);
+        }
+        else{
+            return;
         }
     }
 }

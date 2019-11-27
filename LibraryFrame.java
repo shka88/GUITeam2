@@ -5,10 +5,11 @@
  * @author (작성자 이름) 
  * @version (버전번호나 날짜)
  */
-public class LibraryFrame extends JFrame
+public class LibraryFrame extends JFrame 
 {
     JLabel ml;
     JPanel mp;
+    JButton rbr,rbk,fl,ol,borrower,book,loan;
     public LibraryFrame(){
         this.setTitle("체크박스 만들기 예제");
         this.setSize(300,400);
