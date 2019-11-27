@@ -11,16 +11,17 @@ public class LibraryListenenr implements ActionListener
     JButton rbr,rbk,fl,ol,borrower,book,loan;
     JTextField txt; 
     JList<String> jl;
+
     public LibraryListenenr(){
         rbr.addActionListener(this);
         rbk.addActionListener(this);
         fl.addActionListener(this); 
         ol.addActionListener(this);
     }
-    
+
     public void actionPerformed(ActionEvent e){
         Object obj = e.getSource();
-        
+
         if(obj == rbr){
             String strName = JOptionPane.showInputDialog(null,"name");
             txt.setText(strName);
@@ -28,42 +29,43 @@ public class LibraryListenenr implements ActionListener
         else if(obj == rbk){
             String strBook = JOptionPane.showInputDialog(null,"title");
             txt.setText(strBook);
-            
+
             String strAuthor = JOptionPane.showInputDialog(null,"author");
             txt.setText(strAuthor);
-            
+
         }
         else if(obj == fl){
             String str = JOptionPane.showInputDialog(null,"title");
             txt.setText(str);
-            
+
             String strAuthor = JOptionPane.showInputDialog(null,"author");
             txt.setText(strAuthor);
-            
+
             String strNumber = JOptionPane.showInputDialog(null,"catalogueNumber");
             txt.setText(strNumber);
         }
         else if(obj == ol){
             String str = JOptionPane.showInputDialog(null,"title");
             txt.setText(str);
-            
+
             String strAuthor = JOptionPane.showInputDialog(null,"author");
             txt.setText(strAuthor);
-            
+
             String strNumber = JOptionPane.showInputDialog(null,"catalogueNumber");
             txt.setText(strNumber);
         }
         else if(obj == borrower){
-            
+            String jlBorrower[]= {"대출가능한 책"};
+            jl = new JList(jlBorrower); 
         }
         else if(obj == book){
-         
-      
+            String jlBook[]= {"등럭된 이용자"};                        
+            jl = new JList(jlBook);   
         }
         else if(obj == loan){
-         
-      
+            String jlLoan[]= {"대출 되어 있는 책 컬랙션"};                        
+            jl = new JList(jlLoan);          
         }
     }
-    
+
 }
