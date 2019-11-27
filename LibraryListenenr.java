@@ -11,13 +11,6 @@ public class LibraryListenenr implements ActionListener
     JButton rbr,rbk,fl,ol,borrower,book,loan;
     JTextField txt; 
     JList<String> jl;
-    public LibraryListenenr(){
-        rbr.addActionListener(this);
-        rbk.addActionListener(this);
-        fl.addActionListener(this); 
-        ol.addActionListener(this);
-    }
-    
     public void actionPerformed(ActionEvent e){
         Object obj = e.getSource();
         
