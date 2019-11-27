@@ -3,13 +3,14 @@ import java.awt.event.*;
 /**
  * 여기에 LibraryListenenr 클래스 설명을 작성하십시오.
  * 
- * @author (작성자 이름) 
+ * @author (2018315056 우메모토 세이야, 2018315036 양유석, 2018315030 이가영, 2018315053 테라오카 유이카) 
  * @version (버전번호나 날짜)
  */
 public class LibraryListenenr implements ActionListener
 {
     JButton rbr,rbk,fl,ol,borrower,book,loan;
     JTextField txt; 
+    JList<String> jl;
     public LibraryListenenr(){
         rbr.addActionListener(this);
         rbk.addActionListener(this);
@@ -52,8 +53,17 @@ public class LibraryListenenr implements ActionListener
             String strNumber = JOptionPane.showInputDialog(null,"catalogueNumber");
             txt.setText(strNumber);
         }
-        else{
-            return;
+        else if(obj == borrower){
+            
+        }
+        else if(obj == book){
+         
+      
+        }
+        else if(obj == loan){
+         
+      
         }
     }
+    
 }
