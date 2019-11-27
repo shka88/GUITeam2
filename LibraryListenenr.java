@@ -10,7 +10,7 @@ public class LibraryListenenr implements ActionListener
 {
     JButton rbr,rbk,fl,ol,borrower,book,loan;
     JTextField txt; 
-    JList jl;
+    JList<String> jl;
     public LibraryListenenr(){
         
         rbr.addActionListener(this);
@@ -54,8 +54,17 @@ public class LibraryListenenr implements ActionListener
             String strNumber = JOptionPane.showInputDialog(null,"catalogueNumber");
             txt.setText(strNumber);
         }
-        else{
-            return;
+        else if(obj == borrower){
+            
+        }
+        else if(obj == book){
+         
+      
+        }
+        else if(obj == loan){
+         
+      
         }
     }
+    
 }
