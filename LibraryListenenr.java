@@ -66,7 +66,7 @@ public class LibraryListenenr implements ActionListener
             
         }
         else if(((JButton)e.getSource()).getText().equals("OnLoan")){
-            String text = JOptionPane.showInputDialog(null,"name","ForLoan",
+            String text = JOptionPane.showInputDialog(null,"catalogueNumber","ForLoan",
             JOptionPane.INFORMATION_MESSAGE);
             
             JOptionPane.showMessageDialog(null,"Registered");
