@@ -10,7 +10,6 @@ import javax.swing.event.*;
  */
 public class LibraryListenenr implements ActionListener
 {
-    JButton rbr,rbk,fl,ol,borrower,book,loan;
     JTextField text; 
     JList<String> jl;
     public LibraryListenenr(){
@@ -22,19 +21,19 @@ public class LibraryListenenr implements ActionListener
 
     public void actionPerformed(ActionEvent e){
             //Object obj = e.getSource();
-            if(e.getSource() == rbr){                      
+            if(((JButton)e.getSource()).getText().equals("RegisterBorrower")){                      
                 String text = JOptionPane.showInputDialog(null,"name","Borrower",
                 JOptionPane.INFORMATION_MESSAGE);
 
-                JOptionPane.showMessageDialog(null,"등록되었습니다. "+ text);
-                 
+                JOptionPane.showMessageDialog(null,"Registered"+ text);
+                
                 
                 //txt.setText(strName); 
                 //JOptionPane.PLAIN_MESSAGE, null, null, null);
                 //System.out.println("strName : " + strName); //입력한 단어가 리턴된다.
 
             }
-            else if(e.getSource() == rbk){
+            else if(((JButton)e.getSource()).getText().equals("RegisterBook")){
                 String strBook = JOptionPane.showInputDialog(null,"title");
                 text.setText(strBook);
 
@@ -42,7 +41,7 @@ public class LibraryListenenr implements ActionListener
                 text.setText(strAuthor);
     
             }
-            else if(e.getSource() ==  fl){
+            else if(((JButton)e.getSource()).getText().equals("ForLoan")){
                 String str = JOptionPane.showInputDialog(null,"title");
                 text.setText(str);
     
@@ -52,7 +51,7 @@ public class LibraryListenenr implements ActionListener
                 String strNumber = JOptionPane.showInputDialog(null,"catalogueNumber");
                 text.setText(strNumber);
             }
-            else if(e.getSource() ==  ol){
+            else if(((JButton)e.getSource()).getText().equals("OnLoan")){
                 String str = JOptionPane.showInputDialog(null,"title");
                 text.setText(str);
     
@@ -62,15 +61,15 @@ public class LibraryListenenr implements ActionListener
                 String strNumber = JOptionPane.showInputDialog(null,"catalogueNumber");
                 text.setText(strNumber);
             }
-            else if(e.getSource() ==  borrower){
+            else if(((JButton)e.getSource()).getText().equals("Borrower")){
                 String jlBorrower[]= {"대출가능한 책"};
                 jl = new JList(jlBorrower); 
             }
-            else if(e.getSource() ==  book){
+            else if(((JButton)e.getSource()).getText().equals("Book")){
                 String jlBook[]= {"등록된 이용자"};                        
                 jl = new JList(jlBook);   
             }
-            else if(e.getSource() ==  loan){
+            else if(((JButton)e.getSource()).getText().equals("Loan")){
                 String jlLoan[]= {"대출 되어 있는 책 컬랙션"};                        
                 jl = new JList(jlLoan);          
             }
