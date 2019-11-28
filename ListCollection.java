@@ -17,7 +17,7 @@ public class ListCollection extends JFrame implements ActionListener
 
     public static void main(String[] args){
         ListCollection test = new ListCollection("ListBorrower");
-
+        
         test.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         test.setBounds( 10, 10, 250, 180);
@@ -77,7 +77,7 @@ public class ListCollection extends JFrame implements ActionListener
 
             list.ensureIndexIsVisible(model.getSize() - 1);
         }else if (actionCommand.equals("insertButton")){
-            /* 現在リストで選択されている項目のIndexを調べる */
+            // 현재 리스트에서 선택하고 있는 항목의 index를 찾는다.            
             int index = list.getSelectedIndex();
             if (index == -1){
                 model.add(0, text.getText());

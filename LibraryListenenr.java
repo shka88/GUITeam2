@@ -8,13 +8,15 @@ import java.awt.*;
  * @author (2018315056 우메모토 세이야, 2018315036 양유석, 2018315030 이가영, 2018315053 테라오카 유이카) 
  * @version (버전번호나 날짜)
  */
-public class LibraryListenenr implements ActionListener
+public class LibraryListenenr extends JFrame implements ActionListener
 {
     JTextField text, text2, text3, text4 ; 
     JList li;
     JButton rbr,rbk,fl,ol,borrower,book,loan;
-    
-    
+
+    protected JList list;
+    protected JTextField t;
+    protected DefaultListModel model;
     public LibraryListenenr(){
         // rbr.addActionListener(this);
         // rbk.addActionListener(this);
@@ -24,6 +26,7 @@ public class LibraryListenenr implements ActionListener
 
     public void actionPerformed(ActionEvent e){
         //Object obj = e.getSource();
+
         if(((JButton)e.getSource()).getText().equals("RegisterBorrower")){                      
             String text = JOptionPane.showInputDialog(null,"name","Borrower",
                     JOptionPane.INFORMATION_MESSAGE);
@@ -77,41 +80,158 @@ public class LibraryListenenr implements ActionListener
 
         }
         else if(((JButton)e.getSource()).getText().equals("Book")){
-            String[] jiBook= {"1","2","3"};
-            //JList<String> list1 = new JList<String> (jiBook); 
-            li = new JList(jiBook);
-            //new JScrollPane(li);
             
-            
-            //JScrollPane sp1 = new JScrollPane();
-            //sp1.getViewport().setView(list1); 
-            //sp1.add(list1 );
-            //sp1.setPreferredSize(new Dimension(200, 80));
-            //JPanel p1 = new JPanel();
-            //p1.add(sp1); 
+            ListCollection test = new ListCollection("Book");
 
+            test.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+            test.setBounds( 10, 10, 250, 180);
+            test.setVisible(true);
+
+            model = new DefaultListModel();
+            StringBuffer sb;
+            for (int i = 1 ; i < 15 ; i++){
+                sb = new StringBuffer();
+                sb.append("Book");
+                sb.append(i);
+                model.addElement(new String(sb));
+            }
+
+            list = new JList(model);
+
+            JScrollPane sp = new JScrollPane();
+            sp.getViewport().setView(list);
+            sp.setPreferredSize(new Dimension(200, 80));
+
+            JPanel p = new JPanel();
+            p.add(sp);
+
+            getContentPane().add(p, BorderLayout.CENTER);
+
+            JButton addButton = new JButton("AddElement");
+            addButton.addActionListener(this);
+            addButton.setActionCommand("addButton");
+
+            JButton insertButton = new JButton("Add");
+            insertButton.addActionListener(this);
+            insertButton.setActionCommand("insertButton");
+
+            JPanel p2 = new JPanel();
+            p2.add(addButton);
+            p2.add(insertButton);
+
+            getContentPane().add(p2, BorderLayout.SOUTH);
+
+            text = new JTextField(10);
+            JPanel p3 = new JPanel();
+            p3.add(text);
+
+            getContentPane().add(p3, BorderLayout.NORTH);
+
+            
         }
         else if(((JButton)e.getSource()).getText().equals("Borrower")){
-            String[] jlBorrower = {"1","2","3"};                        
-            li = new JList(jlBorrower); 
             
-            //JScrollPane sp2 = new JScrollPane();
-            //sp2.getViewport().setView(list2); 
-            //sp2.setPreferredSize(new Dimension(200, 80));
-            //JPanel p2 = new JPanel();
-            //p2.add(sp2);    //パネルにスクロールペインを追加
+            ListCollection test = new ListCollection("Borrower");
+
+            test.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+            test.setBounds( 10, 10, 250, 180);
+            test.setVisible(true);
+
+            model = new DefaultListModel();
+            StringBuffer sb;
+            for (int i = 1 ; i < 15 ; i++){
+                sb = new StringBuffer();
+                sb.append("Borrower");
+                sb.append(i);
+                model.addElement(new String(sb));
+            }
+
+            list = new JList(model);
+
+            JScrollPane sp = new JScrollPane();
+            sp.getViewport().setView(list);
+            sp.setPreferredSize(new Dimension(200, 80));
+
+            JPanel p = new JPanel();
+            p.add(sp);
+
+            getContentPane().add(p, BorderLayout.CENTER);
+
+            JButton addButton = new JButton("AddElement");
+            addButton.addActionListener(this);
+            addButton.setActionCommand("addButton");
+
+            JButton insertButton = new JButton("Add");
+            insertButton.addActionListener(this);
+            insertButton.setActionCommand("insertButton");
+
+            JPanel p2 = new JPanel();
+            p2.add(addButton);
+            p2.add(insertButton);
+
+            getContentPane().add(p2, BorderLayout.SOUTH);
+
+            text = new JTextField(10);
+            JPanel p3 = new JPanel();
+            p3.add(text);
+
+            getContentPane().add(p3, BorderLayout.NORTH);
+
+            
+
         }
         else if(((JButton)e.getSource()).getText().equals("Loan")){                              
-            String[] jlLoan = {"대출 되어 있는 책 컬랙션"};                        
-            li = new JList(jlLoan); 
-            
-            //JScrollPane sp3 = new JScrollPane();
-            //sp3.getViewport().setView(list3); 
-            //sp3.setPreferredSize(new Dimension(200, 80));
-            //JPanel p3 = new JPanel();
-            //p3.add(sp3);    //パネルにスクロールペインを追加
-        }
-        else{
+
+            ListCollection test = new ListCollection("Loan");
+
+            test.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+            test.setBounds( 10, 10, 250, 180);
+            test.setVisible(true);
+
+            model = new DefaultListModel();
+            StringBuffer sb;
+            for (int i = 1 ; i < 15 ; i++){
+                sb = new StringBuffer();
+                sb.append("Loan");
+                sb.append(i);
+                model.addElement(new String(sb));
+            }
+
+            list = new JList(model);
+
+            JScrollPane sp = new JScrollPane();
+            sp.getViewport().setView(list);
+            sp.setPreferredSize(new Dimension(200, 80));
+
+            JPanel p = new JPanel();
+            p.add(sp);
+
+            getContentPane().add(p, BorderLayout.CENTER);
+
+            JButton addButton = new JButton("AddElement");
+            addButton.addActionListener(this);
+            addButton.setActionCommand("addButton");
+
+            JButton insertButton = new JButton("Add");
+            insertButton.addActionListener(this);
+            insertButton.setActionCommand("insertButton");
+
+            JPanel p2 = new JPanel();
+            p2.add(addButton);
+            p2.add(insertButton);
+
+            getContentPane().add(p2, BorderLayout.SOUTH);
+
+            text = new JTextField(10);
+            JPanel p3 = new JPanel();
+            p3.add(text);
+
+            getContentPane().add(p3, BorderLayout.NORTH);
+
+        }else{
             return;
         }
     }
