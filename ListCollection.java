@@ -4,10 +4,10 @@ import java.util.Vector;
 import java.awt.event.*;
 import javax.swing.event.*;
 /**
- * 여기에 JList 클래스 설명을 작성하십시오.
+ * Borrower, Book, Loan Collection를 구현하는 클래스.
  * 
- * @author (작성자 이름) 
- * @version (버전번호나 날짜)
+ * @author (2018315056 우메모토 세이야, 2018315036 양유석, 2018315030 이가영, 2018315053 테라오카 유이카) 
+ * @version (2019.11.29)
  */
 public class ListCollection extends JFrame implements ActionListener
 {
@@ -17,7 +17,7 @@ public class ListCollection extends JFrame implements ActionListener
 
     public static void main(String[] args){
         ListCollection test = new ListCollection("ListBorrower");
-        
+
         test.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         test.setBounds( 10, 10, 250, 180);
