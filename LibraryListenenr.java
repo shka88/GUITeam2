@@ -8,11 +8,13 @@ import java.awt.*;
  * @author (2018315056 우메모토 세이야, 2018315036 양유석, 2018315030 이가영, 2018315053 테라오카 유이카) 
  * @version (버전번호나 날짜)
  */
-public class LibraryListenenr extends JComponent implements ActionListener
+public class LibraryListenenr implements ActionListener
 {
     JTextField text, text2, text3, text4 ; 
-    JList<String> jlBorrower,jlBook, jlLoan;
+    JList li;
     JButton rbr,rbk,fl,ol,borrower,book,loan;
+    
+    
     public LibraryListenenr(){
         // rbr.addActionListener(this);
         // rbk.addActionListener(this);
@@ -75,35 +77,39 @@ public class LibraryListenenr extends JComponent implements ActionListener
 
         }
         else if(((JButton)e.getSource()).getText().equals("Book")){
-            String[] jiBook= {"대출 가능한 책"};
-            JList list1 = new JList<String> (jiBook); 
-            JScrollPane sp1 = new JScrollPane();
-            sp1.getViewport().setView(list1); 
-            sp1.setPreferredSize(new Dimension(200, 80));
-            JPanel p1 = new JPanel();
-            p1.add(sp1); 
-
+            String[] jiBook= {"1","2","3"};
+            //JList<String> list1 = new JList<String> (jiBook); 
+            li = new JList(jiBook);
+            //new JScrollPane(li);
             
+            
+            //JScrollPane sp1 = new JScrollPane();
+            //sp1.getViewport().setView(list1); 
+            //sp1.add(list1 );
+            //sp1.setPreferredSize(new Dimension(200, 80));
+            //JPanel p1 = new JPanel();
+            //p1.add(sp1); 
+
         }
         else if(((JButton)e.getSource()).getText().equals("Borrower")){
-            String[] jlBorrower = {"등록된 이용자"};                        
-            JList list2 = new JList<String> (jlBorrower); 
-
-            JScrollPane sp2 = new JScrollPane();
-            sp2.getViewport().setView(list2); 
-            sp2.setPreferredSize(new Dimension(200, 80));
-            JPanel p2 = new JPanel();
-            p2.add(sp2);    //パネルにスクロールペインを追加
+            String[] jlBorrower = {"1","2","3"};                        
+            li = new JList(jlBorrower); 
+            
+            //JScrollPane sp2 = new JScrollPane();
+            //sp2.getViewport().setView(list2); 
+            //sp2.setPreferredSize(new Dimension(200, 80));
+            //JPanel p2 = new JPanel();
+            //p2.add(sp2);    //パネルにスクロールペインを追加
         }
         else if(((JButton)e.getSource()).getText().equals("Loan")){                              
             String[] jlLoan = {"대출 되어 있는 책 컬랙션"};                        
-            JList list3 = new JList<String> (jlLoan); 
-
-            JScrollPane sp3 = new JScrollPane();
-            sp3.getViewport().setView(list3); 
-            sp3.setPreferredSize(new Dimension(200, 80));
-            JPanel p3 = new JPanel();
-            p3.add(sp3);    //パネルにスクロールペインを追加
+            li = new JList(jlLoan); 
+            
+            //JScrollPane sp3 = new JScrollPane();
+            //sp3.getViewport().setView(list3); 
+            //sp3.setPreferredSize(new Dimension(200, 80));
+            //JPanel p3 = new JPanel();
+            //p3.add(sp3);    //パネルにスクロールペインを追加
         }
         else{
             return;
