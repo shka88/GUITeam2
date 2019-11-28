@@ -23,12 +23,12 @@ public class LibraryListenenr implements ActionListener
     public void actionPerformed(ActionEvent e){
             //Object obj = e.getSource();
             if(e.getSource() == rbr){                      
-                String strName = JOptionPane.showInputDialog(null,"name","Borrower",
+                String text = JOptionPane.showInputDialog(null,"name","Borrower",
                 JOptionPane.INFORMATION_MESSAGE);
 
                 JOptionPane.showMessageDialog(null,"등록되었습니다. "+ text);
-
-
+                 
+                
                 //txt.setText(strName); 
                 //JOptionPane.PLAIN_MESSAGE, null, null, null);
                 //System.out.println("strName : " + strName); //입력한 단어가 리턴된다.
