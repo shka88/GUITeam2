@@ -29,16 +29,8 @@ public class LibraryListenenr extends JFrame implements ActionListener
 
         setTitle(title);
         model = new DefaultListModel();
-        // StringBuffer sb;
-        // for (int i = 1 ; i < 15 ; i++){
-            // sb = new StringBuffer();
-            // sb.append("Borrower");
-            // sb.append(i);
-            // model.addElement(new String(sb));
-        // }
 
         list = new JList(model);
-
         JScrollPane sp = new JScrollPane();
         sp.getViewport().setView(list);
         sp.setPreferredSize(new Dimension(200, 80));
@@ -53,6 +45,7 @@ public class LibraryListenenr extends JFrame implements ActionListener
 
         getContentPane().add(p3, BorderLayout.NORTH);
         return list;
+
     }
 
     public void actionPerformed(ActionEvent e){
@@ -112,9 +105,37 @@ public class LibraryListenenr extends JFrame implements ActionListener
             JOptionPane.showMessageDialog(null,"Registered");
 
         }
+        else if(((JButton)e.getSource()).getText().equals("Borrower")){
+            jf.setVisible(true);
+            jf.setTitle("Borrower");
+            model = new DefaultListModel();
+            StringBuffer sb;
+            for (int i = 1 ; i < 15 ; i++){
+                sb = new StringBuffer();
+                sb.append("Borrower");
+                sb.append(i);
+                model.addElement(new String(sb));
+            }
+
+            list = new JList(model);
+            JScrollPane sp = new JScrollPane();
+            sp.getViewport().setView(list);
+            sp.setPreferredSize(new Dimension(200, 80));
+
+            JPanel p = new JPanel();
+            p.add(sp);
+            getContentPane().add(p, BorderLayout.CENTER);
+            jf.add(p);
+            
+            text = new JTextField(10);
+            JPanel p3 = new JPanel();
+            p3.add(text);            jf.add(p);
+            getContentPane().add(p3, BorderLayout.NORTH);
+
+        }
         else if(((JButton)e.getSource()).getText().equals("Book")){
             jf.setVisible(true);
-            setTitle("Book");
+            jf.setTitle("Book");
             model = new DefaultListModel();
             StringBuffer sb;
             for (int i = 1 ; i < 15 ; i++){
@@ -129,81 +150,25 @@ public class LibraryListenenr extends JFrame implements ActionListener
             JScrollPane sp = new JScrollPane();
             sp.getViewport().setView(list);
             sp.setPreferredSize(new Dimension(200, 80));
+            
 
             JPanel p = new JPanel();
             p.add(sp);
-
             getContentPane().add(p, BorderLayout.CENTER);
 
-            // JButton addButton = new JButton("AddElement");
-            // addButton.addActionListener(this);
-            // addButton.setActionCommand("addButton");
-
-            // JButton insertButton = new JButton("Add");
-            // insertButton.addActionListener(this);
-            // insertButton.setActionCommand("insertButton");
-
-            // JPanel p2 = new JPanel();
-            // p2.add(addButton);
-            // p2.add(insertButton);
-
-            // getContentPane().add(p2, BorderLayout.SOUTH);
-
+            
             text = new JTextField(10);
             JPanel p3 = new JPanel();
             p3.add(text);
-            jf.add(p);
             getContentPane().add(p3, BorderLayout.NORTH);
-
-        }
-        else if(((JButton)e.getSource()).getText().equals("Borrower")){
-            jf.setVisible(true);
-            setTitle("Borrower");
-            model = new DefaultListModel();
-            StringBuffer sb;
-            for (int i = 1 ; i < 15 ; i++){
-                sb = new StringBuffer();
-                sb.append("Borrower");
-                sb.append(i);
-                model.addElement(new String(sb));
-            }
-
-            list = new JList(model);
-
-            JScrollPane sp = new JScrollPane();
-            sp.getViewport().setView(list);
-            sp.setPreferredSize(new Dimension(200, 80));
-
-            JPanel p = new JPanel();
-            p.add(sp);
-
-            getContentPane().add(p, BorderLayout.CENTER);
-
-            // JButton addButton = new JButton("AddElement");
-            // addButton.addActionListener(this);
-            // addButton.setActionCommand("addButton");
-
-            // JButton insertButton = new JButton("Add");
-            // insertButton.addActionListener(this);
-            // insertButton.setActionCommand("insertButton");
-
-            // JPanel p2 = new JPanel();
-            // p2.add(addButton);
-            // p2.add(insertButton);
-
-            // getContentPane().add(p2, BorderLayout.SOUTH);
-
-            text = new JTextField(10);
-            JPanel p3 = new JPanel();
-            p3.add(text);
-            jf.add(p);
-            getContentPane().add(p3, BorderLayout.NORTH);
+            p3.add(p);
+            
+            jf.add(p3);
         }
         else if(((JButton)e.getSource()).getText().equals("Loan")){                              
-            
-            
+
             jf.setVisible(true);
-            setTitle("Loan");
+            jf.setTitle("Loan");
             model = new DefaultListModel();
             StringBuffer sb;
             for (int i = 1 ; i < 15 ; i++){
@@ -221,30 +186,14 @@ public class LibraryListenenr extends JFrame implements ActionListener
 
             JPanel p = new JPanel();
             p.add(sp);
-
             getContentPane().add(p, BorderLayout.CENTER);
+            jf.add(p);
 
-            // JButton addButton = new JButton("AddElement");
-            // addButton.addActionListener(this);
-            // addButton.setActionCommand("addButton");
-
-            // JButton insertButton = new JButton("Add");
-            // insertButton.addActionListener(this);
-            // insertButton.setActionCommand("insertButton");
-
-            // JPanel p2 = new JPanel();
-            // p2.add(addButton);
-            // p2.add(insertButton);
-
-            // getContentPane().add(p2, BorderLayout.SOUTH);
-
-            
             text = new JTextField(10);
             JPanel p3 = new JPanel();
             p3.add(text);
-            jf.add(p);
             getContentPane().add(p3, BorderLayout.NORTH);
-
+ 
         }else{
             return;
         }
