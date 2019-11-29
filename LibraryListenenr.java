@@ -15,7 +15,7 @@ public class LibraryListenenr extends JFrame implements ActionListener
     JButton rbr,rbk,fl,ol,borrower,book,loan;
 
     protected JList list;
-    protected JTextField t;
+    //protected JTextField t;
     protected DefaultListModel model;
     JFrame jf = new JFrame();
     public LibraryListenenr(){
@@ -56,7 +56,7 @@ public class LibraryListenenr extends JFrame implements ActionListener
             String text = JOptionPane.showInputDialog(null,"name","Borrower",
                     JOptionPane.INFORMATION_MESSAGE);
 
-            JOptionPane.showMessageDialog(null,"Registered"+ text);
+            JOptionPane.showMessageDialog(null,"Registered");
 
             //txt.setText(strName); 
             //JOptionPane.PLAIN_MESSAGE, null, null, null);
@@ -127,9 +127,9 @@ public class LibraryListenenr extends JFrame implements ActionListener
             getContentPane().add(p, BorderLayout.CENTER);
 
             
-            text = new JTextField(10);
+            //text = new JTextField(10);
             JPanel p3 = new JPanel();
-            p3.add(text);
+            //p3.add(text);
             getContentPane().add(p3, BorderLayout.NORTH);
             p3.add(p);
             
@@ -159,9 +159,9 @@ public class LibraryListenenr extends JFrame implements ActionListener
             getContentPane().add(p, BorderLayout.CENTER);
 
             
-            text = new JTextField(10);
+            //text = new JTextField(10);
             JPanel p3 = new JPanel();
-            p3.add(text);
+            //p3.add(text);
             getContentPane().add(p3, BorderLayout.NORTH);
             p3.add(p);
             
@@ -191,9 +191,9 @@ public class LibraryListenenr extends JFrame implements ActionListener
             getContentPane().add(p, BorderLayout.CENTER);
 
             
-            text = new JTextField(10);
+            //text = new JTextField(10);
             JPanel p3 = new JPanel();
-            p3.add(text);
+            //p3.add(text);
             getContentPane().add(p3, BorderLayout.NORTH);
             p3.add(p);
             
