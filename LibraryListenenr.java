@@ -3,10 +3,10 @@ import java.awt.event.*;
 import javax.swing.event.*;
 import java.awt.*;
 /**
- * 여기에 LibraryListenenr 클래스 설명을 작성하십시오.
+ * LibraryListenenr를 구현하는 클래스.
  * 
  * @author (2018315056 우메모토 세이야, 2018315036 양유석, 2018315030 이가영, 2018315053 테라오카 유이카) 
- * @version (버전번호나 날짜)
+ * @version (2019.11.29)
  */
 public class LibraryListenenr extends JFrame implements ActionListener
 {
@@ -125,13 +125,15 @@ public class LibraryListenenr extends JFrame implements ActionListener
             JPanel p = new JPanel();
             p.add(sp);
             getContentPane().add(p, BorderLayout.CENTER);
-            jf.add(p);
+
             
             text = new JTextField(10);
             JPanel p3 = new JPanel();
-            p3.add(text);            jf.add(p);
+            p3.add(text);
             getContentPane().add(p3, BorderLayout.NORTH);
-
+            p3.add(p);
+            
+            jf.add(p3);
         }
         else if(((JButton)e.getSource()).getText().equals("Book")){
             jf.setVisible(true);
@@ -187,13 +189,15 @@ public class LibraryListenenr extends JFrame implements ActionListener
             JPanel p = new JPanel();
             p.add(sp);
             getContentPane().add(p, BorderLayout.CENTER);
-            jf.add(p);
 
+            
             text = new JTextField(10);
             JPanel p3 = new JPanel();
             p3.add(text);
             getContentPane().add(p3, BorderLayout.NORTH);
- 
+            p3.add(p);
+            
+            jf.add(p3);
         }else{
             return;
         }
