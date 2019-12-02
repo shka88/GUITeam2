@@ -1,4 +1,4 @@
-
+import java.io.*;
 /**
  * Main 클래스를 구현하는 MyApp 클래스.
  * 
@@ -7,7 +7,7 @@
  */
 public class MyApp
 {
-    public static void main(String args[]){
+    public static void main(String args[]) throws IOException{
         LibraryFrame LF = new LibraryFrame();
         
     }
