@@ -8,7 +8,7 @@ import java.awt.*;
  * @author (2018315056 우메모토 세이야, 2018315036 양유석, 2018315030 이가영, 2018315053 테라오카 유이카) 
  * @version (2019.11.29)
  */
-public class LibraryListenenr extends JFrame implements ActionListener
+public class LibraryListener extends JFrame implements ActionListener
 {
     JTextField text, text2, text3, text4 ; 
 
@@ -18,7 +18,7 @@ public class LibraryListenenr extends JFrame implements ActionListener
     //protected JTextField t;
     protected DefaultListModel model;
     JFrame jf = new JFrame();
-    public LibraryListenenr(){
+    public LibraryListener(){
         // rbr.addActionListener(this);
         // rbk.addActionListener(this);
         // fl.addActionListener(this); 
