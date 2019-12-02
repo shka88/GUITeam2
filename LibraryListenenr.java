@@ -110,7 +110,7 @@ public class LibraryListenenr extends JFrame implements ActionListener
             jf.setTitle("Borrower");
             model = new DefaultListModel();
             StringBuffer sb;
-            for (int i = 1 ; i < 15 ; i++){
+            for (int i = 1 ; i < 15 ; i++){ //나중에 실제 이용자로 바꿈.
                 sb = new StringBuffer();
                 sb.append("Borrower");
                 sb.append(i);

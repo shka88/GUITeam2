@@ -12,7 +12,7 @@ public class LibraryFrame extends JFrame
     JPanel mp;
     JButton rbr,rbk,fl,ol,borrower,book,loan;    
     public LibraryFrame(){
-        this.setTitle("도서관관리시스템");
+        this.setTitle("Library Application");
         this.setSize(300,400);
         
         mp = new LibraryPanel();
