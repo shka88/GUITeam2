@@ -1,6 +1,4 @@
-import java.util.TreeSet;
-import java.util.Iterator;
-import java.util.HashSet;
+import java.util.*;
 /**
  * Library Class where 6 usecases are implemented
  *
@@ -18,51 +16,57 @@ public class Library
         registeredBorrowers = new HashSet<Borrower>();
     }
 
-    public void registerOneBorrower(String name) {
+    public boolean registerOneBorrower(String name) {
         Borrower eachBorrower = null;
         Iterator<Borrower> it = registeredBorrowers.iterator();
         while(it.hasNext()) {
             eachBorrower = it.next();
             if(eachBorrower.getName().equals(name)){
-                System.out.println("Duplicate Error."); return;}
+                return false;}
         }
         Borrower borrowerToRegister = new Borrower(name);
         System.out.println(borrowerToRegister);
         registeredBorrowers.add(borrowerToRegister);
+        return true;
     }
 
-    public void registerOneBook(String title, String author, int catalogNumber) {
+    public boolean registerOneBook(String title, String author, long catalogNumber) {
         Book eachBook = null;
         Iterator<Book> it = registeredBooks.iterator();
         while(it.hasNext()) {
             eachBook = it.next();
             if((eachBook.getTitle().equals(title)) && (eachBook.getAuthor().equals(author))) {
-                System.out.println("Duplicate Error."); return;}
+                return false;}
         }
         Book bookToRegister = new Book(title, author, catalogNumber);
         System.out.println(bookToRegister);
         registeredBooks.add(bookToRegister);
+        return true;
     }
 
-    public void displayBooksForLoan() {
+    public Vector<String> displayBooksForLoan() {
         Book eachBook;
+        Vector<String> result = new Vector<String>();
         Iterator<Book> it = registeredBooks.iterator();
         while(it.hasNext()) {
             eachBook = it.next();
             if(eachBook.checkIfAvailable() == true)
-                System.out.println(eachBook.toString());
+                result.add(eachBook.toString());
         }
+        return result;
     }
 
-    public void displayBooksOnLoan() {
+    public Vector<String> displayBooksOnLoan() {
         Book eachBook;
+        Vector<String> result = new Vector<String>();
         Iterator<Book> it = registeredBooks.iterator();
         while(it.hasNext()) {
             eachBook = it.next();
             if (eachBook.checkIfAvailable() == false){
-                System.out.println(eachBook.toString());
+                result.add(eachBook.toString());
             }
         }
+        return result;
     }
 
     public void lendOneBook(String name, int catalogueNumber) {

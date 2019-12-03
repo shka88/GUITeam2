@@ -9,9 +9,9 @@ public class Book implements Comparable<Book>
 {
     private String title;
     private String author;
-    private int catalogueNumber;
+    private long catalogueNumber;
     private Loan attachedLoan;
-    public Book(String title, String author, int catalogueNumber) {
+    public Book(String title, String author, long catalogueNumber) {
         this.title = title;
         this.author = author;
         this.catalogueNumber = catalogueNumber;
@@ -49,7 +49,7 @@ public class Book implements Comparable<Book>
     public String getAuthor(){
         return this.author;
     }
-    public int getCatalogueNumber() {
+    public long getCatalogueNumber() {
         return this.catalogueNumber;
     }
     public Loan getLoan(){
