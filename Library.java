@@ -105,7 +105,7 @@ public class Library
         }
     }
 
-    public void returnOneBook(String name, long catalogueNumber) {
+    public String returnOneBook(String name, long catalogueNumber) {
         Borrower eachBorrower = null;
         Book eachBook = null;
         Iterator<Borrower> itBorrowers = registeredBorrowers.iterator();
@@ -113,6 +113,8 @@ public class Library
             eachBorrower = itBorrowers.next();
             if(eachBorrower.getName().equals(name))
                 break;
+            else if(itBorrowers.hasNext() == false)
+                return "Borrower Can't be found";
         }
         Iterator<Book> itBooks = registeredBooks.iterator();
         while(itBooks.hasNext()) {
@@ -120,9 +122,12 @@ public class Library
             if (eachBook.getCatalogueNumber() == catalogueNumber){
                 break;
             }
+            else if(itBooks.hasNext() == false)
+                return "Book Can't be found";
         }
         Loan loan = eachBook.deleteLoan();
         eachBorrower.deleteLoan(loan);
+        return "Return Complete!";
     }
 
     public String toString(){

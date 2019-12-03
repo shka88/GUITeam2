@@ -233,8 +233,8 @@ public class LibraryListener extends JFrame implements ActionListener
             
             String check = lib.lendOneBook(mtflName.getText().trim(), Long.parseLong(mtflCNum.getText().trim()));
        
-            ta.append(check);
-            if (check.equals("Lend complete!")){
+            ta.append(check+ "\n");
+            if (check.equals("Lend complete!"+ "\n")){
                 btnl.setEnabled(false);
             }
             mtflName.setText("");
@@ -246,10 +246,12 @@ public class LibraryListener extends JFrame implements ActionListener
             ta.append("CatalogueNumber: " + mtfrCNum.getText() + "\n");
             ta.append("-------------------------------------------------------------\n");
             
-            lib.returnOneBook(mtfrName.getText().trim(), Long.parseLong(mtfrCNum.getText().trim()));
+            String check = lib.returnOneBook(mtfrName.getText().trim(), Long.parseLong(mtfrCNum.getText().trim()));
        
-            ta.append("Return complete!\n");
-            btnr.setEnabled(false);
+            ta.append(check + "\n");
+            if (check.equals("Return Complete!")){
+                btnr.setEnabled(false);
+            }
             mtfrName.setText("");
             mtfrCNum.setText("");
         }else{
