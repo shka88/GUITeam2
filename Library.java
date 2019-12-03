@@ -10,12 +10,10 @@ import java.util.HashSet;
 public class Library
 { 
     private String name;
-    private int lastCatalogueNumber;
     private TreeSet<Book> registeredBooks;
     private HashSet<Borrower> registeredBorrowers;
     public Library(String name) {
         this.name = name;
-        lastCatalogueNumber = 0;
         registeredBooks = new TreeSet<Book>();
         registeredBorrowers = new HashSet<Borrower>();
     }
@@ -33,7 +31,7 @@ public class Library
         registeredBorrowers.add(borrowerToRegister);
     }
 
-    public void registerOneBook(String title, String author) {
+    public void registerOneBook(String title, String author, int catalogNumber) {
         Book eachBook = null;
         Iterator<Book> it = registeredBooks.iterator();
         while(it.hasNext()) {
@@ -41,10 +39,9 @@ public class Library
             if((eachBook.getTitle().equals(title)) && (eachBook.getAuthor().equals(author))) {
                 System.out.println("Duplicate Error."); return;}
         }
-        Book bookToRegister = new Book(title, author, lastCatalogueNumber);
+        Book bookToRegister = new Book(title, author, catalogNumber);
         System.out.println(bookToRegister);
         registeredBooks.add(bookToRegister);
-        lastCatalogueNumber += 1; //일련번호 생성 방법 바꿀 필요가 있음
     }
 
     public void displayBooksForLoan() {
