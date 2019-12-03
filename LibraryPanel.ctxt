@@ -3,6 +3,4 @@ comment0.target=LibraryPanel
 comment0.text=\r\n\ LibraryPanel\uB97C\ \uAD6C\uD604\uD558\uB294\ \uD074\uB798\uC2A4.\r\n\ \r\n\ @author\ (2018315056\ \uC6B0\uBA54\uBAA8\uD1A0\ \uC138\uC774\uC57C,\ 2018315036\ \uC591\uC720\uC11D,\ 2018315030\ \uC774\uAC00\uC601,\ 2018315053\ \uD14C\uB77C\uC624\uCE74\ \uC720\uC774\uCE74)\ \r\n\ @version\ (2019.11.29)\r\n
 comment1.params=lib\ title
 comment1.target=LibraryPanel(Library,\ java.lang.String)
-comment2.params=item
-comment2.target=int\ makeCatalogueNumber(int)
-numComments=3
+numComments=2
