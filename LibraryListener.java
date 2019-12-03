@@ -26,15 +26,10 @@ public class LibraryListener extends JFrame implements ActionListener
     JComboBox jb;
     public LibraryListener(Library lib){
         this.lib = lib;
-        // rbr.addActionListener(this);
-        // rbk.addActionListener(this);
-        // fl.addActionListener(this); 
-        // ol.addActionListener(this);
+
     }
 
     public void actionPerformed(ActionEvent e){
-        //Object obj = e.getSource();
-        // jf.setBounds( 10, 10, 250, 180);
         JButton btn1 = (JButton)e.getSource();
         if(((JButton)e.getSource()).getText().equals("RegisterBorrower")){                      
             JFrame f = new JFrame();
@@ -57,26 +52,17 @@ public class LibraryListener extends JFrame implements ActionListener
             ta.setEditable(false);
             mp.add(new JScrollPane(ta));
             f.add(mp);
-
-            //JOptionPane.showConfirmDialog(null,"Register","Borrower",JOptionPane.YES_NO_OPTION);
-            //btn1.addActionListener(this);
-            //txt.setText(strName); 
-            //JOptionPane.PLAIN_MESSAGE, null, null, null);
-            //System.out.println("strName : " + strName); //입력한 단어가 리턴된다.
-
         }
         else if(((JButton)e.getSource()).getText().equals("RegisterBook")){
             JFrame f = new JFrame();
             f.setTitle("Book");
             f.setSize(400,280);
             f.show();
-            
+
             JPanel mp = new JPanel();
             String[] str = {"총류", "철학", "종교", "사회과학", "자연과학", "기술과학", "예술", "언어", "문학", "역사"};
             jb = new JComboBox(str);
-            
 
-            
             JLabel rbkTitleLabel = new JLabel("Title");
             mp.add(rbkTitleLabel);
             rbkTitleTxt = new JTextField(" ",10);
@@ -95,14 +81,6 @@ public class LibraryListener extends JFrame implements ActionListener
             ta.setEditable(false);
             mp.add(new JScrollPane(ta));
             f.add(mp);
-
-            // ta.append(jl.getText() + " : ");
-            // ta.append(tf.getText() + " \n "); 
-            // ta.append(jl2.getText() + " : ");
-            // ta.append(tf2.getText() + " \n "); 
-            // ta.append("----------------------------------------------------------------------------------------");
-
-            //JOptionPane.showConfirmDialog(null,"Register","Book",JOptionPane.YES_NO_OPTION);
         }
         else if(((JButton)e.getSource()).getText().equals("ForLoan")){
             JFrame f = new JFrame();
@@ -116,19 +94,9 @@ public class LibraryListener extends JFrame implements ActionListener
             JList jlb = new JList(lib.displayBooksForLoan());
             JScrollPane sp = new JScrollPane(jlb);
             sp.setPreferredSize(new Dimension(700, 200));
-            
+
             mp.add(sp);
             f.add(mp);
-
-            // ta.append(jl.getText() + " : ");
-            // ta.append(tf.getText() + " \n "); 
-            // ta.append(jl2.getText() + " : ");
-            // ta.append(tf2.getText() + " \n ");
-            // ta.append(jl3.getText() + " : ");
-            // ta.append(tf3.getText() + " \n "); 
-            // ta.append("----------------------------------------------------------------------------------------");
-
-            //JOptionPane.showConfirmDialog(null,"Register","ForLoan",JOptionPane.YES_NO_OPTION);
         }
         else if(((JButton)e.getSource()).getText().equals("OnLoan")){
             JFrame f = new JFrame();
@@ -142,7 +110,7 @@ public class LibraryListener extends JFrame implements ActionListener
             JList jlb = new JList(lib.displayBooksOnLoan());
             JScrollPane sp = new JScrollPane(jlb);
             sp.setPreferredSize(new Dimension(700, 200));
-            
+
             mp.add(sp);
             f.add(mp);
         }
@@ -158,12 +126,12 @@ public class LibraryListener extends JFrame implements ActionListener
             mp.add(mllName);
             mtflName = new JTextField(" ",20);
             mp.add(mtflName);
-            
+
             JLabel mllCNum = new JLabel("Book Catalogue Number");
             mp.add(mllCNum);
             mtflCNum = new JTextField(" ",20);
             mp.add(mtflCNum);
-            
+
             btnl = new JButton("Lend");
             mp.add(btnl);
             btnl.addActionListener(this);
@@ -184,12 +152,12 @@ public class LibraryListener extends JFrame implements ActionListener
             mp.add(mlrName);
             mtfrName = new JTextField(" ",20);
             mp.add(mtfrName);
-            
+
             JLabel mlrCNum = new JLabel("Book Catalogue Number");
             mp.add(mlrCNum);
             mtfrCNum = new JTextField(" ",20);
             mp.add(mtfrCNum);
-            
+
             btnr = new JButton("Return");
             mp.add(btnr);
             btnr.addActionListener(this);
@@ -230,9 +198,9 @@ public class LibraryListener extends JFrame implements ActionListener
             ta.append("Name: " + mtflName.getText() + "\n");
             ta.append("CatalogueNumber: " + mtflCNum.getText() + "\n");
             ta.append("-------------------------------------------------------------\n");
-            
+
             String check = lib.lendOneBook(mtflName.getText().trim(), Long.parseLong(mtflCNum.getText().trim()));
-       
+
             ta.append(check+ "\n");
             if (check.equals("Lend complete!"+ "\n")){
                 btnl.setEnabled(false);
@@ -240,14 +208,14 @@ public class LibraryListener extends JFrame implements ActionListener
             mtflName.setText("");
             mtflCNum.setText("");
         }else if(((JButton)e.getSource()).getText().equals("Return")){
-            
+
             btnr.setEnabled(true);
             ta.append("Name: " + mtfrName.getText() + "\n");
             ta.append("CatalogueNumber: " + mtfrCNum.getText() + "\n");
             ta.append("-------------------------------------------------------------\n");
-            
+
             String check = lib.returnOneBook(mtfrName.getText().trim(), Long.parseLong(mtfrCNum.getText().trim()));
-       
+
             ta.append(check + "\n");
             if (check.equals("Return Complete!")){
                 btnr.setEnabled(false);
@@ -257,8 +225,9 @@ public class LibraryListener extends JFrame implements ActionListener
         }else{
             return;
         }
-        
+
     }
+
     public long makeCatalogueNumber(int item) {
         // 일련번호 = 장르+초+분+연+월+일
         LocalDateTime ld = LocalDateTime.now();

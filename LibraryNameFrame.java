@@ -4,10 +4,10 @@ import java.util.*;
 import java.awt.event.*;
 import java.io.*;
 /**
- * Write a description of class LibraryNameFrame here.
+ *도서관의 이름을 지정해주는 Frame.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (2018315056 우메모토 세이야, 2018315036 양유석, 2018315030 이가영, 2018315053 테라오카 유이카)
+ * @version (2019/12/03)
  */
 public class LibraryNameFrame extends JFrame implements ActionListener, WindowListener
 {
