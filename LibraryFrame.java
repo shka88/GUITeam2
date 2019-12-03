@@ -35,7 +35,7 @@ public class LibraryFrame extends JFrame
         
         this.pack();
         this.setLocationRelativeTo(null);
-        this.addWindowListener(new CloseAndSaveData(lib.getBorrwers(),lib.getBooks()));
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
     }
 }
