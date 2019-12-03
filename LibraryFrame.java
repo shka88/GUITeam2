@@ -18,19 +18,19 @@ public class LibraryFrame extends JFrame
     public LibraryFrame() throws IOException{
         this.setTitle("Library Application");
         this.setSize(300,400);
-        
+
         ImagePanel panel = new ImagePanel(new ImageIcon("images/libraryImage3.jpg").getImage());
         this.add(panel);
         this.pack();
-        
+
         // this.setContentPane(new JPanel() {
-            // Image image = ImageIO.read(new File("images/libraryImage3.jpg"));
-            // public void painComponent(Graphics g) {
-                // super.paintComponent(g);
-                // g.drawImage(image, 0, 0, null);
-            // }            
+        // Image image = ImageIO.read(new File("images/libraryImage3.jpg"));
+        // public void painComponent(Graphics g) {
+        // super.paintComponent(g);
+        // g.drawImage(image, 0, 0, null);
+        // }            
         // });
-        
+
         mp = new LibraryPanel();
         this.add(mp);
 
@@ -42,6 +42,7 @@ public class LibraryFrame extends JFrame
         public ImagePanel(String img) {
             this(new ImageIcon(img).getImage());
         }
+
         public ImagePanel(Image img) {
             this.img = img;
             Dimension size = new Dimension(img.getWidth(null), img.getHeight(null));
@@ -51,11 +52,11 @@ public class LibraryFrame extends JFrame
             setSize(size);
             setLayout(null);
         }
+
         public void paintComponent(Graphics g) {
             super.paintComponent(g);
             g.drawImage(img, 0, 0, this);
         }
     }
 }
-
 

@@ -27,23 +27,23 @@ public class LibraryListener extends JFrame implements ActionListener
 
     protected JList ListCollection(String title){
 
-        setTitle(title);
-        model = new DefaultListModel();
+        // setTitle(title);
+        // model = new DefaultListModel();
 
-        list = new JList(model);
-        JScrollPane sp = new JScrollPane();
-        sp.getViewport().setView(list);
-        sp.setPreferredSize(new Dimension(200, 80));
+        // list = new JList(model);
+        // JScrollPane sp = new JScrollPane();
+        // sp.getViewport().setView(list);
+        // sp.setPreferredSize(new Dimension(200, 80));
 
-        JPanel p = new JPanel();
-        p.add(sp);
+        // JPanel p = new JPanel();
+        // p.add(sp);
 
-        getContentPane().add(p, BorderLayout.CENTER);
-        text = new JTextField(10);
-        JPanel p3 = new JPanel();
-        p3.add(text);
+        // getContentPane().add(p, BorderLayout.CENTER);
+        // text = new JTextField(10);
+        // JPanel p3 = new JPanel();
+        // p3.add(text);
 
-        getContentPane().add(p3, BorderLayout.NORTH);
+        // getContentPane().add(p3, BorderLayout.NORTH);
         return list;
 
     }
@@ -52,11 +52,12 @@ public class LibraryListener extends JFrame implements ActionListener
         //Object obj = e.getSource();
         jf.setBounds( 10, 10, 250, 180);
 
-        if(((JButton)e.getSource()).getText().equals("RegisterBorrower")){                      
-            String text = JOptionPane.showInputDialog(null,"name","Borrower",
-                    JOptionPane.INFORMATION_MESSAGE);
+        if(((JButton)e.getSource()).getText().equals("RegisterBorrower")){
+            
+            // String text = JOptionPane.showInputDialog(null,"name","Borrower",
+                    // JOptionPane.INFORMATION_MESSAGE);
 
-            JOptionPane.showMessageDialog(null,"Registered");
+            // JOptionPane.showMessageDialog(null,"Registered");
 
             //txt.setText(strName); 
             //JOptionPane.PLAIN_MESSAGE, null, null, null);
