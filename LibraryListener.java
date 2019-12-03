@@ -54,7 +54,8 @@ public class LibraryListener extends JFrame implements ActionListener
             btnbr.addActionListener(this);
 
             ta = new JTextArea(10,24);
-            mp.add(ta);
+            ta.setEditable(false);
+            mp.add(new JScrollPane(ta));
             f.add(mp);
 
             //JOptionPane.showConfirmDialog(null,"Register","Borrower",JOptionPane.YES_NO_OPTION);
@@ -91,7 +92,8 @@ public class LibraryListener extends JFrame implements ActionListener
             btnbk.addActionListener(this);
 
             ta = new JTextArea(10,30);
-            mp.add(ta);
+            ta.setEditable(false);
+            mp.add(new JScrollPane(ta));
             f.add(mp);
 
             // ta.append(jl.getText() + " : ");
@@ -254,10 +256,6 @@ public class LibraryListener extends JFrame implements ActionListener
             return;
         }
         
-    }
-
-    public void setLib(Library lib) {
-        this.lib = lib;
     }
     public long makeCatalogueNumber(int item) {
         // 일련번호 = 장르+초+분+연+월+일
