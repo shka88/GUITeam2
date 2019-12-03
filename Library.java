@@ -78,7 +78,7 @@ public class Library
             eachBorrower = itBorrowers.next();
             if(eachBorrower.getName().equals(name)){
                 break;
-            }else{
+            }else if(itBorrowers.hasNext() == false){
                 return "Borrower Can't be found";
             }
         }
@@ -87,7 +87,7 @@ public class Library
             eachBook = itBooks.next();
             if(eachBook.getCatalogueNumber() == catalogueNumber)
                 break;
-            else
+            else if(itBooks.hasNext() == false)
                 return "Book Can't be found";
         }
         if((eachBorrower.checkIfEligible()) && (eachBook.checkIfAvailable())) {
