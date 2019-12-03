@@ -21,6 +21,7 @@ public class LibraryFrame extends JFrame
         this.setTitle("Library Application");
         this.setSize(300,400);
         
+<<<<<<< HEAD
         try {
             BufferedImage img = ImageIO.read(new File("images/libraryImage3.jpg"));
             this.setContentPane(new JLabel(new ImageIcon(img)));
@@ -30,6 +31,13 @@ public class LibraryFrame extends JFrame
             
         this.setLayout(new BorderLayout());
         mp = new LibraryPanel(lib);
+=======
+        BufferedImage img = ImageIO.read(new File("images/libraryImage.jpg"));
+        this.setContentPane(new JLabel(new ImageIcon(img)));
+        
+        this.setLayout(new BorderLayout());
+        mp = new LibraryPanel();
+>>>>>>> 87cc6be490770c1d6e7ba4e4f06a54cb4530e1ef
         mp.setOpaque(false);
         this.add(mp);
         
