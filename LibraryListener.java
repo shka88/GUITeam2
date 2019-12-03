@@ -15,13 +15,12 @@ public class LibraryListener extends JFrame implements ActionListener
 {
     String libName;
     JTextField text, text2, text3, text4 ; 
-    JButton btnbr, btnbk;
+    JButton btnbr, btnbk ,btnl, btnr;
     protected JList list;
     //protected JTextField t;
     protected DefaultListModel model;
-    JFrame jf = new JFrame();
     JTextArea ta;
-    JTextField mtfName, mtfTitle, mtfAuthor, mtfCatalogueNumber;
+    JTextField rbrNameTxt, rbkTitleTxt, rbkAuthorTxt, mtflCNum, mtfrName, mtfrCNum, mtflName;
     Library lib;
     long catalogueNumber;
     JComboBox jb;
@@ -33,32 +32,9 @@ public class LibraryListener extends JFrame implements ActionListener
         // ol.addActionListener(this);
     }
 
-    protected JList ListCollection(String title){
-
-        // setTitle(title);
-        // model = new DefaultListModel();
-
-        // list = new JList(model);
-        // JScrollPane sp = new JScrollPane();
-        // sp.getViewport().setView(list);
-        // sp.setPreferredSize(new Dimension(200, 80));
-
-        // JPanel p = new JPanel();
-        // p.add(sp);
-
-        // getContentPane().add(p, BorderLayout.CENTER);
-        // text = new JTextField(10);
-        // JPanel p3 = new JPanel();
-        // p3.add(text);
-
-        // getContentPane().add(p3, BorderLayout.NORTH);
-        return list;
-
-    }
-
     public void actionPerformed(ActionEvent e){
         //Object obj = e.getSource();
-        jf.setBounds( 10, 10, 250, 180);
+        // jf.setBounds( 10, 10, 250, 180);
         JButton btn1 = (JButton)e.getSource();
         if(((JButton)e.getSource()).getText().equals("RegisterBorrower")){                      
             JFrame f = new JFrame();
@@ -68,10 +44,10 @@ public class LibraryListener extends JFrame implements ActionListener
 
             JPanel mp = new JPanel();
 
-            JLabel mlName = new JLabel("Name");
-            mp.add(mlName);
-            mtfName = new JTextField(" ",10);
-            mp.add(mtfName);
+            JLabel rbrNameLabel = new JLabel("Name");
+            mp.add(rbrNameLabel);
+            rbrNameTxt = new JTextField(" ",10);
+            mp.add(rbrNameTxt);
 
             btnbr = new JButton("RegistBorrower");
             mp.add(btnbr);
@@ -101,15 +77,15 @@ public class LibraryListener extends JFrame implements ActionListener
             
 
             
-            JLabel mlTitle = new JLabel("Title");
-            mp.add(mlTitle);
-            mtfTitle = new JTextField(" ",10);
-            mp.add(mtfTitle);
+            JLabel rbkTitleLabel = new JLabel("Title");
+            mp.add(rbkTitleLabel);
+            rbkTitleTxt = new JTextField(" ",10);
+            mp.add(rbkTitleTxt);
 
-            JLabel mlAuthor = new JLabel("Author");
-            mp.add(mlAuthor);
-            mtfAuthor = new JTextField(" ",10);
-            mp.add(mtfAuthor);
+            JLabel rbkAuthorLabel = new JLabel("Author");
+            mp.add(rbkAuthorLabel);
+            rbkAuthorTxt = new JTextField(" ",10);
+            mp.add(rbkAuthorTxt);
             mp.add(jb);
             btnbk = new JButton("RegistBook");
             mp.add(btnbk);
@@ -131,13 +107,15 @@ public class LibraryListener extends JFrame implements ActionListener
         else if(((JButton)e.getSource()).getText().equals("ForLoan")){
             JFrame f = new JFrame();
             f.setTitle("ForLoan");
-            f.setSize(680,300);
+            f.setSize(750,300);
             f.show();
 
             JPanel mp = new JPanel();
+            JLabel jl = new JLabel("For Loan Book");
+            mp.add(jl);
             JList jlb = new JList(lib.displayBooksForLoan());
             JScrollPane sp = new JScrollPane(jlb);
-            sp.setPreferredSize(new Dimension(500, 250));
+            sp.setPreferredSize(new Dimension(700, 200));
             
             mp.add(sp);
             f.add(mp);
@@ -154,136 +132,130 @@ public class LibraryListener extends JFrame implements ActionListener
         }
         else if(((JButton)e.getSource()).getText().equals("OnLoan")){
             JFrame f = new JFrame();
-            f.setTitle("ForLoan");
-            f.setSize(680,300);
+            f.setTitle("OnLoan");
+            f.setSize(750,300);
             f.show();
 
             JPanel mp = new JPanel();
+            JLabel jl = new JLabel("On Loan Book");
+            mp.add(jl);
             JList jlb = new JList(lib.displayBooksOnLoan());
             JScrollPane sp = new JScrollPane(jlb);
-            sp.setPreferredSize(new Dimension(500, 250));
+            sp.setPreferredSize(new Dimension(700, 200));
             
             mp.add(sp);
             f.add(mp);
         }
         else if(((JButton)e.getSource()).getText().equals("LendBook")){
-            jf.setVisible(true);
-            jf.setTitle("Borrower");
-            model = new DefaultListModel();
-            StringBuffer sb;
-            for (int i = 1 ; i < 15 ; i++){ //나중에 실제 이용자로 바꿈.
-                sb = new StringBuffer();
-                sb.append("Borrower");
-                sb.append(i);
-                model.addElement(new String(sb));
-            }
+            JFrame f = new JFrame();
+            f.setTitle("LendBook");
+            f.setSize(750,300);
+            f.show();
 
-            list = new JList(model);
-            JScrollPane sp = new JScrollPane();
-            sp.getViewport().setView(list);
-            sp.setPreferredSize(new Dimension(200, 80));
+            JPanel mp = new JPanel();
 
-            JPanel p = new JPanel();
-            p.add(sp);
-            getContentPane().add(p, BorderLayout.CENTER);
+            JLabel mllName = new JLabel("Name");
+            mp.add(mllName);
+            mtflName = new JTextField(" ",20);
+            mp.add(mtflName);
+            
+            JLabel mllCNum = new JLabel("Book Catalogue Number");
+            mp.add(mllCNum);
+            mtflCNum = new JTextField(" ",20);
+            mp.add(mtflCNum);
+            
+            btnl = new JButton("Lend");
+            mp.add(btnl);
+            btnl.addActionListener(this);
 
-            //text = new JTextField(10);
-            JPanel p3 = new JPanel();
-            //p3.add(text);
-            getContentPane().add(p3, BorderLayout.NORTH);
-            p3.add(p);
-
-            jf.add(p3);
+            ta = new JTextArea(13,70);
+            mp.add(ta);
+            f.add(mp);
         }
         else if(((JButton)e.getSource()).getText().equals("ReturnBook")){
-            jf.setVisible(true);
-            jf.setTitle("Book");
-            model = new DefaultListModel();
-            StringBuffer sb;
-            for (int i = 1 ; i < 15 ; i++){
-                sb = new StringBuffer();
-                sb.append("Book");
-                sb.append(i);
-                model.addElement(new String(sb));
-            }
+            JFrame f = new JFrame();
+            f.setTitle("ReturnBook");
+            f.setSize(750,300);
+            f.show();
 
-            list = new JList(model);
+            JPanel mp = new JPanel();
 
-            JScrollPane sp = new JScrollPane();
-            sp.getViewport().setView(list);
-            sp.setPreferredSize(new Dimension(200, 80));
+            JLabel mlrName = new JLabel("Name");
+            mp.add(mlrName);
+            mtfrName = new JTextField(" ",20);
+            mp.add(mtfrName);
+            
+            JLabel mlrCNum = new JLabel("Book Catalogue Number");
+            mp.add(mlrCNum);
+            mtfrCNum = new JTextField(" ",20);
+            mp.add(mtfrCNum);
+            
+            btnr = new JButton("Return");
+            mp.add(btnr);
+            btnr.addActionListener(this);
 
-            JPanel p = new JPanel();
-            p.add(sp);
-            getContentPane().add(p, BorderLayout.CENTER);
-
-            //text = new JTextField(10);
-            JPanel p3 = new JPanel();
-            //p3.add(text);
-            getContentPane().add(p3, BorderLayout.NORTH);
-            p3.add(p);
-
-            jf.add(p3);
-        }
-        else if(((JButton)e.getSource()).getText().equals("Loan")){                              
-
-            jf.setVisible(true);
-            jf.setTitle("Loan");
-            model = new DefaultListModel();
-            StringBuffer sb;
-            for (int i = 1 ; i < 15 ; i++){
-                sb = new StringBuffer();
-                sb.append("Loan");
-                sb.append(i);
-                model.addElement(new String(sb));
-            }
-
-            list = new JList(model);
-
-            JScrollPane sp = new JScrollPane();
-            sp.getViewport().setView(list);
-            sp.setPreferredSize(new Dimension(200, 80));
-
-            JPanel p = new JPanel();
-            p.add(sp);
-            getContentPane().add(p, BorderLayout.CENTER);
-
-            //text = new JTextField(10);
-            JPanel p3 = new JPanel();
-            //p3.add(text);
-            getContentPane().add(p3, BorderLayout.NORTH);
-            p3.add(p);
-
-            jf.add(p3);
+            ta = new JTextArea(13,70);
+            mp.add(ta);
+            f.add(mp);
         }else if(((JButton)e.getSource()).getText().equals("RegistBook")){
             btnbk.setEnabled(true);
             catalogueNumber = makeCatalogueNumber(jb.getSelectedIndex());
-            ta.append("Title: " + mtfTitle.getText() + "\n");
-            ta.append("Author: " + mtfAuthor.getText() + "\n");
+            ta.append("Title: " + rbkTitleTxt.getText() + "\n");
+            ta.append("Author: " + rbkAuthorTxt.getText() + "\n");
             ta.append("CatalogueNumber: " + String.format("%015d",catalogueNumber) + "\n");
             ta.append("-------------------------------------------------------------\n");
-            boolean check = lib.registerOneBook(mtfTitle.getText(), mtfAuthor.getText(), catalogueNumber);
+            boolean check = lib.registerOneBook(rbkTitleTxt.getText().trim(), rbkAuthorTxt.getText().trim(), catalogueNumber);
             if(check){
                 ta.append("regist complete");
                 btnbk.setEnabled(false);
             }else{
                 ta.append("Duplicate Error!\n");
             }
+            rbkTitleTxt.setText("");
+            rbkAuthorTxt.setText("");
         }else if(((JButton)e.getSource()).getText().equals("RegistBorrower")){
             btnbr.setEnabled(true);
-            ta.append("Name: " + mtfName.getText() + "\n");
+            ta.append("Name: " + rbrNameTxt.getText() + "\n");
             ta.append("-------------------------------------------------------------\n");
-            boolean check = lib.registerOneBorrower(mtfName.getText());
+            boolean check = lib.registerOneBorrower(rbrNameTxt.getText().trim());
             if(check){
                 ta.append("regist complete");
                 btnbr.setEnabled(false);
             }else{
                 ta.append("Duplicate Error!\n");
             }
+            rbrNameTxt.setText("");
+        }else if(((JButton)e.getSource()).getText().equals("Lend")){
+            btnl.setEnabled(true);
+            ta.append("Name: " + mtflName.getText() + "\n");
+            ta.append("CatalogueNumber: " + mtflCNum.getText() + "\n");
+            ta.append("-------------------------------------------------------------\n");
             
+            String check = lib.lendOneBook(mtflName.getText().trim(), Long.parseLong(mtflCNum.getText().trim()));
+       
+            ta.append(check);
+            if (check.equals("Lend complete!")){
+                btnl.setEnabled(false);
+            }
+            mtflName.setText("");
+            mtflCNum.setText("");
+        }else if(((JButton)e.getSource()).getText().equals("Return")){
+            
+            btnr.setEnabled(true);
+            ta.append("Name: " + mtfrName.getText() + "\n");
+            ta.append("CatalogueNumber: " + mtfrCNum.getText() + "\n");
+            ta.append("-------------------------------------------------------------\n");
+            
+            lib.returnOneBook(mtfrName.getText().trim(), Long.parseLong(mtfrCNum.getText().trim()));
+       
+            ta.append("Return complete!\n");
+            btnr.setEnabled(false);
+            mtfrName.setText("");
+            mtfrCNum.setText("");
         }else{
             return;
         }
+        
     }
     public long makeCatalogueNumber(int item) {
         // 일련번호 = 장르+초+분+연+월+일
