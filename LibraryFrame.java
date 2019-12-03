@@ -14,14 +14,12 @@ public class LibraryFrame extends JFrame
 {
     JLabel ml;
     JPanel mp;
-    JButton rbr,rbk,fl,ol,borrower,book,loan;    
-    public LibraryFrame() throws IOException{
+    JButton rbr,rbk,fl,ol,borrower,book,loan;
+    Library lib;
+    public LibraryFrame(Library lib){
+        this.lib = lib;
         this.setTitle("Library Application");
         this.setSize(300,400);
-
-        ImagePanel panel = new ImagePanel(new ImageIcon("images/libraryImage3.jpg").getImage());
-        this.add(panel);
-        this.pack();
 
         // this.setContentPane(new JPanel() {
         // Image image = ImageIO.read(new File("images/libraryImage3.jpg"));
@@ -31,8 +29,13 @@ public class LibraryFrame extends JFrame
         // }            
         // });
 
-        mp = new LibraryPanel();
+        mp = new LibraryPanel(lib);
         this.add(mp);
+        
+        ImagePanel panel = new ImagePanel(new ImageIcon("images/libraryImage3.jpg").getImage());
+        panel.setOpaque(false);
+        this.add(panel);
+        this.pack();
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);

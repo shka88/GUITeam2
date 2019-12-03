@@ -8,7 +8,6 @@ import java.io.*;
 public class MyApp
 {
     public static void main(String args[]) throws IOException{
-        LibraryFrame LF = new LibraryFrame();
-        
+        LibraryNameFrame lnf = new LibraryNameFrame();
     }
 }

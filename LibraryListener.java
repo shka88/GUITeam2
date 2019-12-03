@@ -10,6 +10,7 @@ import java.awt.*;
  */
 public class LibraryListener extends JFrame implements ActionListener
 {
+    String libName;
     JTextField text, text2, text3, text4 ; 
 
     JButton rbr,rbk,fl,ol,borrower,book,loan;
@@ -18,7 +19,9 @@ public class LibraryListener extends JFrame implements ActionListener
     //protected JTextField t;
     protected DefaultListModel model;
     JFrame jf = new JFrame();
-    public LibraryListener(){
+    Library lib;
+    public LibraryListener(Library lib){
+        this.lib = lib;
         // rbr.addActionListener(this);
         // rbk.addActionListener(this);
         // fl.addActionListener(this); 
@@ -54,15 +57,17 @@ public class LibraryListener extends JFrame implements ActionListener
 
         if(((JButton)e.getSource()).getText().equals("RegisterBorrower")){
             
-            // String text = JOptionPane.showInputDialog(null,"name","Borrower",
-                    // JOptionPane.INFORMATION_MESSAGE);
-
+            String text = JOptionPane.showInputDialog(null,"name","Borrower",
+                    JOptionPane.INFORMATION_MESSAGE);
+                    
+            System.out.println(text);
+            
             // JOptionPane.showMessageDialog(null,"Registered");
 
-            //txt.setText(strName); 
-            //JOptionPane.PLAIN_MESSAGE, null, null, null);
-            //System.out.println("strName : " + strName); //입력한 단어가 리턴된다.
-
+            // text.setText(strName); 
+            // JOptionPane.PLAIN_MESSAGE, null, null, null);
+            // System.out.println("strName : " + strName); //입력한 단어가 리턴된다.
+            // System.exit(0);
         }
         else if(((JButton)e.getSource()).getText().equals("RegisterBook")){
             String text = JOptionPane.showInputDialog(null,"title","Book",
@@ -202,5 +207,8 @@ public class LibraryListener extends JFrame implements ActionListener
         }else{
             return;
         }
+    }
+    public void setLib(Library lib) {
+        this.lib = lib;
     }
 }
