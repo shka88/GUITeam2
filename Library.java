@@ -69,33 +69,43 @@ public class Library
         return result;
     }
 
-    public void lendOneBook(String name, int catalogueNumber) {
+    public String lendOneBook(String name, long catalogueNumber) {
         Borrower eachBorrower = null;
         Book eachBook = null;
         Loan newLoan = null;
         Iterator<Borrower> itBorrowers = registeredBorrowers.iterator();
         while(itBorrowers.hasNext()) {
             eachBorrower = itBorrowers.next();
-            if(eachBorrower.getName().equals(name))
+            if(eachBorrower.getName().equals(name)){
                 break;
+            }else{
+                return "Borrower Can't be found";
+            }
         }
         Iterator<Book> itBooks = registeredBooks.iterator();
         while(itBooks.hasNext()) {
             eachBook = itBooks.next();
             if(eachBook.getCatalogueNumber() == catalogueNumber)
                 break;
+            else
+                return "Book Can't be found";
         }
         if((eachBorrower.checkIfEligible()) && (eachBook.checkIfAvailable())) {
             newLoan = new Loan();
             eachBorrower.registerLoans(newLoan);
             eachBook.registerLoan(newLoan);
-        } else if(eachBook.checkIfAvailable() == false)
-            System.out.println(eachBook.toString() + " - can't be borrowed");
-        else if(eachBorrower.checkIfEligible() == false)
-            System.out.println(eachBorrower.toString() + " - can't borrow");
+            return "Lend complete!";
+        } else if(eachBook.checkIfAvailable() == false){
+            return eachBook.toString() + " - can't be borrowed";
+        }else if(eachBorrower.checkIfEligible() == false){
+            return eachBorrower.toString() + " - can't borrow";
+        }
+        else{
+            return "";
+        }
     }
 
-    public void returnOneBook(String name, int catalogueNumber) {
+    public void returnOneBook(String name, long catalogueNumber) {
         Borrower eachBorrower = null;
         Book eachBook = null;
         Iterator<Borrower> itBorrowers = registeredBorrowers.iterator();
