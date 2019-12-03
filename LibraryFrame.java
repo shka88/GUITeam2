@@ -16,35 +16,28 @@ public class LibraryFrame extends JFrame
     JPanel mp;
     JButton rbr,rbk,fl,ol,borrower,book,loan;
     Library lib;
+    BufferedImage img;
     public LibraryFrame(Library lib){
         this.lib = lib;
         this.setTitle("Library Application");
         this.setSize(300,400);
         
-<<<<<<< HEAD
-        try {
-            BufferedImage img = ImageIO.read(new File("images/libraryImage3.jpg"));
-            this.setContentPane(new JLabel(new ImageIcon(img)));
-        } catch(IOException e) {
-            e.printStackTrace();
-        }
+        
+        try{
+            BufferedImage img = ImageIO.read(new File("images/libraryimage3.jpg"));
             
+            this.setContentPane(new JLabel(new ImageIcon(img)));
+        }catch(IOException e){
+        }
         this.setLayout(new BorderLayout());
         mp = new LibraryPanel(lib);
-=======
-        BufferedImage img = ImageIO.read(new File("images/libraryImage.jpg"));
-        this.setContentPane(new JLabel(new ImageIcon(img)));
-        
-        this.setLayout(new BorderLayout());
-        mp = new LibraryPanel();
->>>>>>> 87cc6be490770c1d6e7ba4e4f06a54cb4530e1ef
+
         mp.setOpaque(false);
         this.add(mp);
         
         this.pack();
         this.setLocationRelativeTo(null);
-        Library lb = new Library("");
-        this.addWindowListener(new CloseAndSaveData(lb.getBorrwers(),lb.getBooks()));
+        this.addWindowListener(new CloseAndSaveData(lib.getBorrwers(),lib.getBooks()));
         this.setVisible(true);
     }
 }

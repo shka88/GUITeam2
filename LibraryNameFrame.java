@@ -35,6 +35,7 @@ public class LibraryNameFrame extends JFrame implements ActionListener, WindowLi
     }
     public void actionPerformed(ActionEvent e){
         Library lib = new Library(tf.getText());
+        
         new LibraryFrame(lib);
         this.setVisible(false);
     }
