@@ -33,8 +33,6 @@ public class LibraryListener extends JFrame implements ActionListener
     }
 
     public void actionPerformed(ActionEvent e){
-        //Object obj = e.getSource();
-        // jf.setBounds( 10, 10, 250, 180);
         JButton btn1 = (JButton)e.getSource();
         if(((JButton)e.getSource()).getText().equals("RegisterBorrower")){                      
             JFrame f = new JFrame();
@@ -58,12 +56,6 @@ public class LibraryListener extends JFrame implements ActionListener
             mp.add(new JScrollPane(ta));
             f.add(mp);
 
-            //JOptionPane.showConfirmDialog(null,"Register","Borrower",JOptionPane.YES_NO_OPTION);
-            //btn1.addActionListener(this);
-            //txt.setText(strName); 
-            //JOptionPane.PLAIN_MESSAGE, null, null, null);
-            //System.out.println("strName : " + strName); //입력한 단어가 리턴된다.
-
         }
         else if(((JButton)e.getSource()).getText().equals("RegisterBook")){
             JFrame f = new JFrame();
@@ -73,9 +65,7 @@ public class LibraryListener extends JFrame implements ActionListener
             
             JPanel mp = new JPanel();
             String[] str = {"총류", "철학", "종교", "사회과학", "자연과학", "기술과학", "예술", "언어", "문학", "역사"};
-            jb = new JComboBox(str);
-            
-
+            jb = new JComboBox(str);            
             
             JLabel rbkTitleLabel = new JLabel("Title");
             mp.add(rbkTitleLabel);
@@ -95,14 +85,6 @@ public class LibraryListener extends JFrame implements ActionListener
             ta.setEditable(false);
             mp.add(new JScrollPane(ta));
             f.add(mp);
-
-            // ta.append(jl.getText() + " : ");
-            // ta.append(tf.getText() + " \n "); 
-            // ta.append(jl2.getText() + " : ");
-            // ta.append(tf2.getText() + " \n "); 
-            // ta.append("----------------------------------------------------------------------------------------");
-
-            //JOptionPane.showConfirmDialog(null,"Register","Book",JOptionPane.YES_NO_OPTION);
         }
         else if(((JButton)e.getSource()).getText().equals("ForLoan")){
             JFrame f = new JFrame();
@@ -119,16 +101,6 @@ public class LibraryListener extends JFrame implements ActionListener
             
             mp.add(sp);
             f.add(mp);
-
-            // ta.append(jl.getText() + " : ");
-            // ta.append(tf.getText() + " \n "); 
-            // ta.append(jl2.getText() + " : ");
-            // ta.append(tf2.getText() + " \n ");
-            // ta.append(jl3.getText() + " : ");
-            // ta.append(tf3.getText() + " \n "); 
-            // ta.append("----------------------------------------------------------------------------------------");
-
-            //JOptionPane.showConfirmDialog(null,"Register","ForLoan",JOptionPane.YES_NO_OPTION);
         }
         else if(((JButton)e.getSource()).getText().equals("OnLoan")){
             JFrame f = new JFrame();
