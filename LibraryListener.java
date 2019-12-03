@@ -13,12 +13,7 @@ import java.time.format.DateTimeFormatter;
  */
 public class LibraryListener extends JFrame implements ActionListener
 {
-    String libName;
-    JTextField text, text2, text3, text4 ; 
     JButton btnbr, btnbk ,btnl, btnr;
-    protected JList list;
-    //protected JTextField t;
-    protected DefaultListModel model;
     JTextArea ta;
     JTextField rbrNameTxt, rbkTitleTxt, rbkAuthorTxt, mtflCNum, mtfrName, mtfrCNum, mtflName;
     Library lib;
