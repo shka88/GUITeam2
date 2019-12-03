@@ -114,4 +114,13 @@ public class Library
     public String toString(){
         return "Library Name: "+this.name;
     }
+    public String getName(){
+        return this.name;
+    }
+    public TreeSet<Book> getBooks(){
+        return registeredBooks;
+    }
+    public HashSet<Borrower> getBorrwers(){
+        return registeredBorrowers;
+    }
 }

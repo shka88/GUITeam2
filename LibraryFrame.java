@@ -20,46 +20,24 @@ public class LibraryFrame extends JFrame
         this.lib = lib;
         this.setTitle("Library Application");
         this.setSize(300,400);
-
-        // this.setContentPane(new JPanel() {
-        // Image image = ImageIO.read(new File("images/libraryImage3.jpg"));
-        // public void painComponent(Graphics g) {
-        // super.paintComponent(g);
-        // g.drawImage(image, 0, 0, null);
-        // }            
-        // });
-
+        
+        try {
+            BufferedImage img = ImageIO.read(new File("images/libraryImage3.jpg"));
+            this.setContentPane(new JLabel(new ImageIcon(img)));
+        } catch(IOException e) {
+            e.printStackTrace();
+        }
+            
+        this.setLayout(new BorderLayout());
         mp = new LibraryPanel(lib);
+        mp.setOpaque(false);
         this.add(mp);
         
-        ImagePanel panel = new ImagePanel(new ImageIcon("images/libraryImage3.jpg").getImage());
-        panel.setOpaque(false);
-        this.add(panel);
         this.pack();
-
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setLocationRelativeTo(null);
+        Library lb = new Library("");
+        this.addWindowListener(new CloseAndSaveData(lb.getBorrwers(),lb.getBooks()));
         this.setVisible(true);
-    }
-    class ImagePanel extends JPanel {
-        private Image img;
-        public ImagePanel(String img) {
-            this(new ImageIcon(img).getImage());
-        }
-
-        public ImagePanel(Image img) {
-            this.img = img;
-            Dimension size = new Dimension(img.getWidth(null), img.getHeight(null));
-            setPreferredSize(size);
-            setMinimumSize(size);
-            setMaximumSize(size);
-            setSize(size);
-            setLayout(null);
-        }
-
-        public void paintComponent(Graphics g) {
-            super.paintComponent(g);
-            g.drawImage(img, 0, 0, this);
-        }
     }
 }
 

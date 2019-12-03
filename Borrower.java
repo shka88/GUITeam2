@@ -35,4 +35,7 @@ public class Borrower
     public String getName(){
         return this.name;
     }
+    public LinkedList getloans(){
+        return this.attachedLoans;
+    }
 }
