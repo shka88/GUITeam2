@@ -13,5 +13,11 @@ public class Loan
 		borrowDate = LocalDate.now();
 		returnDate = borrowDate.plusWeeks(2);
 	}
+	public LocalDate getBorrowDate() {
+		return borrowDate;
+	}
+	public LocalDate getReturnDate() {
+		return returnDate;
+	}
 }
 

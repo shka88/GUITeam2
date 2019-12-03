@@ -52,4 +52,7 @@ public class Book implements Comparable<Book>
     public int getCatalogueNumber() {
         return this.catalogueNumber;
     }
+    public Loan getLoan(){
+        return this.attachedLoan;
+    }
 }
