@@ -21,7 +21,7 @@ public class LibraryNameFrame extends JFrame implements ActionListener, WindowLi
         lb = new JLabel("Type a library name: ");
         
         tf = new JTextField(20);
-        // tf.addActionListener(this);
+        tf.addActionListener(this);
         
         btn = new JButton("Enter");
         btn.addActionListener(this);
@@ -35,7 +35,7 @@ public class LibraryNameFrame extends JFrame implements ActionListener, WindowLi
     }
     public void actionPerformed(ActionEvent e){
         Library lib = new Library(tf.getText());
-        new LibraryFrame(lib);
+        new LibraryFrame(lib, tf.getText());
         this.setVisible(false);
     }
     public void windowActivated(WindowEvent e) {}
