@@ -60,7 +60,7 @@ public class LibraryListener extends JFrame implements ActionListener
             String text = JOptionPane.showInputDialog(null,"name","Borrower",
                     JOptionPane.INFORMATION_MESSAGE);
                     
-            System.out.println(text);
+            lib.registerOneBorrower(text);
             
             // JOptionPane.showMessageDialog(null,"Registered");
 
@@ -79,6 +79,7 @@ public class LibraryListener extends JFrame implements ActionListener
                     JOptionPane.INFORMATION_MESSAGE);
 
             JOptionPane.showMessageDialog(null,"Registered");
+            
 
         }
         else if(((JButton)e.getSource()).getText().equals("ForLoan")){
