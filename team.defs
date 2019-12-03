@@ -1,13 +1,12 @@
-<<<<<<< HEAD
-#Tue Dec 03 21:21:24 KST 2019
+#Tue Dec 03 21:56:30 KST 2019
+=\=\=\=\=\=\=
 bluej.teamsettings.user=shka88
-=======
-#Tue Dec 03 19:30:22 KST 2019
->>>>>>> be8b90a9a71fe048060741275bde3532b2518beb
 bluej.teamsettings.groupname=
 bluej.teamsettings.yourName=leekayon
 bluej.teamsettings.git.server=github.com
 bluej.teamsettings.yourEmail=lky1732@gmail.com
 bluej.teamsettings.git.repositoryPrefix=/shka88/GUITeam2.git
+>>>>>>>=be8b90a9a71fe048060741275bde3532b2518beb
 bluej.teamsettings.vcs=git
+<<<<<<<=HEAD
 bluej.teamsettings.git.protocol=https
